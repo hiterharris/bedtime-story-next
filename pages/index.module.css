@@ -13,11 +13,12 @@
   font-weight: bold;
   font-style: normal;
 }
+
 .app {
-  max-height: 100vh;
+  height: 100%;
   max-width: 375px;
-  margin: auto;
-  background-image: './';
+  margin: 0 auto;
+  background-color: #101024;
 }
 .main,
 .main input {
@@ -69,6 +70,7 @@
 }
 .main .result {
   font-weight: bold;
-  margin: 16px;
+  margin: 32px;
   line-height: 32px;
+  color: white;
 }

@@ -35,13 +35,13 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.app} style={{ backgroundImage: `url(/background.png)` }}>
+    <div className={styles.app}>
       <Head>
         <title>Bedtime Story</title>
         <link rel="icon" href="/book.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.main} style={{ backgroundImage: `url(/background.png)`, backgroundRepeat: 'no-repeat' }}>
         {/* <img src="/book.png" className={styles.icon} /> */}
         <h3>Bedtime Story</h3>
         <form onSubmit={onSubmit}>
