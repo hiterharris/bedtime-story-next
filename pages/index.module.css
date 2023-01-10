@@ -13,6 +13,12 @@
   font-weight: bold;
   font-style: normal;
 }
+.app {
+  max-height: 100vh;
+  max-width: 375px;
+  margin: auto;
+  background-image: './';
+}
 .main,
 .main input {
   font-size: 16px;
@@ -33,8 +39,8 @@
   font-size: 32px;
   line-height: 40px;
   font-weight: bold;
-  color: #202123;
-  margin: 16px 0 40px;
+  color: white;
+  margin: 240px 0 40px;
 }
 .main form {
   display: flex;
@@ -63,15 +69,6 @@
 }
 .main .result {
   font-weight: bold;
-  width: 50%;
-  margin-top: 64px;
-  line-height: 32px;
-}
-
-.main .generating {
-  text-align: center;
-  font-weight: bold;
-  width: 50%;
-  margin-top: 64px;
+  margin: 16px;
   line-height: 32px;
 }

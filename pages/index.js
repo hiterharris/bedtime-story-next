@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
+import {background} from "../public/background.png";
 
 export default function Home() {
   const [storyPrompt, setStoryPrompt] = useState("");
@@ -34,14 +35,14 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className={styles.app} style={{ backgroundImage: `url(/background.png)` }}>
       <Head>
         <title>Bedtime Story</title>
         <link rel="icon" href="/book.ico" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/book.png" className={styles.icon} />
+        {/* <img src="/book.png" className={styles.icon} /> */}
         <h3>Bedtime Story</h3>
         <form onSubmit={onSubmit}>
           <input
@@ -53,7 +54,7 @@ export default function Home() {
           />
           <input type="submit" value="Generate story" />
         </form>
-        {loading ? <div className={styles.generating}>Generating story...</div> : <div className={styles.result}>{result}</div>}
+        {loading ? <div className={styles.result}>Generating story...</div> : <div className={styles.result}>{result}</div>}
       </main>
     </div>
   );
