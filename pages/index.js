@@ -47,7 +47,7 @@ export default function Home() {
           <input
             type="text"
             name="animal"
-            placeholder="Enter an story topic"
+            placeholder="Enter a story topic"
             value={storyPrompt}
             onChange={(e) => setStoryPrompt(e.target.value)}
           />
