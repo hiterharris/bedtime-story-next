@@ -1,0 +1,6 @@
+{
+  "appId": "com.HHBedtimeStory.app",
+  "appName": "bedtime-story",
+  "webDir": "public",
+  "bundledWebRuntime": false
+}
