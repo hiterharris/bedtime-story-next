@@ -40,10 +40,8 @@ export default function Home() {
         <title>Bedtime Story</title>
         <link rel="icon" href="/book.ico" />
       </Head>
-
-      <main className={styles.main} style={{ backgroundImage: `url(/background.png)`, backgroundRepeat: 'no-repeat' }}>
-        {/* <img src="/book.png" className={styles.icon} /> */}
-        <h3>Bedtime Story</h3>
+      <main className={styles.main}>
+      <img className={styles.bg} src="/background.png" />
         <form onSubmit={onSubmit}>
           <input
             type="text"

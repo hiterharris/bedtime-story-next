@@ -14,11 +14,13 @@
   font-style: normal;
 }
 
-.app {
-  height: 100%;
-  max-width: 375px;
-  margin: 0 auto;
-  background-color: #101024;
+.bg {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 }
 .main,
 .main input {
@@ -33,20 +35,12 @@
   align-items: center;
   padding-top: 60px;
 }
-.main .icon {
-  width: 34px;
-}
-.main h3 {
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: bold;
-  color: white;
-  margin: 240px 0 40px;
-}
 .main form {
   display: flex;
   flex-direction: column;
   width: 320px;
+  margin-top: 320px;
+
 }
 .main input[type="text"] {
   padding: 12px 16px;
