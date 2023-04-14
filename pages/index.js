@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
-import {background} from "../public/background.png";
+import Loader from "../components/Loader";
 
 export default function Home() {
   const [storyPrompt, setStoryPrompt] = useState("");
@@ -50,9 +50,9 @@ export default function Home() {
             value={storyPrompt}
             onChange={(e) => setStoryPrompt(e.target.value)}
           />
-          <input type="submit" value="Generate story" />
+          <input type="submit" value="Generate story" className="generate-button" />
         </form>
-        {loading ? <div className={styles.result}>Generating story...</div> : <div className={styles.result}>{result}</div>}
+        {loading ? <div className={styles.result}><Loader /></div> : <div className={styles.result}>{result}</div>}
       </main>
     </div>
   );
