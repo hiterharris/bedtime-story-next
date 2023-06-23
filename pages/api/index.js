@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
@@ -30,7 +31,7 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       max_tokens: 1000,
-      prompt: `Tell me a story about ${prompt}`,
+      prompt: `Tell me a bedtime story about ${prompt} that tkes about 10 minutes to read`,
       temperature: 0.6,
     });
     res.status(200).json({ result: completion.data.choices[0].text });

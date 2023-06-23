@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
 import Loader from "../components/Loader";
+import Image from "next/image";
 
 export default function Home() {
   const [storyPrompt, setStoryPrompt] = useState("");
@@ -41,7 +42,7 @@ export default function Home() {
         <link rel="icon" href="/book.ico" />
       </Head>
       <main className={styles.main}>
-      <img className={styles.bg} src="/background.png" />
+        <Image src="/moon-icon.png" height={200} width={200} alt="moon-icon" />
         <form onSubmit={onSubmit}>
           <input
             type="text"
