@@ -1,12 +1,18 @@
 import Head from "next/head";
-import { useState } from "react";
-import styles from "./index.module.css";
-import Loader from "../components/Loader";
+import { useState, useEffect } from "react";
+import Mobile from "../components/Mobile";
+import Desktop from "../components/Desktop";
+import { useWindowSize } from "react-use";
+import IndexStyled from "../components/IndexStyled";
+import Image from "next/image";
+import moonIcon from "../public/assets/icons/moon-icon.png"
 
 export default function Home() {
   const [storyPrompt, setStoryPrompt] = useState("");
   const [result, setResult] = useState();
   const [loading, setLoading] = useState(false);
+  const [background, setBackground] = useState("");
+  const windowSize = useWindowSize();
 
   async function onSubmit(event) {
     setLoading(true)
@@ -34,26 +40,32 @@ export default function Home() {
     }
   }
 
+  useEffect(() => {
+    setBackground(windowSize?.width <= 600 ? `/assets/images/moon.png` : `/assets/images/book.png`)
+  }, [windowSize])
+
+  const StoryGenerator = windowSize?.width <= 600 ? Mobile : Desktop;
+
   return (
-    <div className={styles.app}>
+    <IndexStyled>
       <Head>
         <title>Bedtime Story</title>
         <link rel="icon" href="/book.ico" />
       </Head>
-      <main className={styles.main}>
-      <img className={styles.bg} src="/background.png" />
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="animal"
-            placeholder="Enter a story topic"
-            value={storyPrompt}
-            onChange={(e) => setStoryPrompt(e.target.value)}
-          />
-          <input type="submit" value="Generate story" className="generate-button" />
-        </form>
-        {loading ? <div className={styles.result}><Loader /></div> : <div className={styles.result}>{result}</div>}
-      </main>
-    </div>
+      <div className="App">
+        <Image
+          className="moon-icon"
+          src={moonIcon}
+          alt="moon-icon"
+        />
+        <StoryGenerator
+          storyPrompt={storyPrompt}
+          setStoryPrompt={setStoryPrompt}
+          result={result}
+          loading={loading}
+          onSubmit={onSubmit}
+        />
+      </div>
+    </IndexStyled>
   );
 }
